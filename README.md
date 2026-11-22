@@ -1,4 +1,5 @@
 # 🌸 CycleSense
+
 ### AI-Based Longitudinal Women's Health Monitoring and Risk-Assessment System
 
 <p align="center">
@@ -37,8 +38,6 @@ The goal of CycleSense is to provide a centralized platform for menstrual health
 - Personalized health recommendations.
 - Enhanced AI-powered health assistant.
 
-*Planned features are not yet implemented and are subject to development and validation.*
-
 ---
 
 ## 🛠️ Technology Stack
@@ -49,7 +48,7 @@ The goal of CycleSense is to provide a centralized platform for menstrual health
 | Backend | Python, FastAPI |
 | Database | SQLite |
 | ORM | SQLAlchemy |
-| Authentication | JWT |
+| Authentication | JWT, bcrypt |
 | API | REST APIs |
 | Development Tools | VS Code, Git, GitHub |
 
@@ -59,15 +58,15 @@ The goal of CycleSense is to provide a centralized platform for menstrual health
 
 ```text
 CycleSense/
-│
 ├── backend/
-│   └── app/
-│       ├── auth_utils.py
-│       ├── cycle_analysis.py
-│       ├── database.py
-│       ├── main.py
-│       ├── models.py
-│       └── schemas.py
+│   ├── app/
+│   │   ├── auth_utils.py
+│   │   ├── cycle_analysis.py
+│   │   ├── database.py
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   └── schemas.py
+│   └── requirements.txt
 │
 ├── frontend/
 │   ├── public/
@@ -82,7 +81,6 @@ CycleSense/
 │
 └── .gitignore
 ```
-
 ---
 
 ## 🚀 How to Run the Project Locally
@@ -93,7 +91,7 @@ CycleSense/
 - Node.js and npm
 - Git
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Chinmayeel-19/CycleSense.git
@@ -108,7 +106,11 @@ Open a terminal:
 cd backend
 ```
 
-Install the backend dependencies listed in `backend/requirements.txt` (this file needs to be added to the repository).
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
 
 Start the FastAPI server:
 
@@ -116,17 +118,13 @@ Start the FastAPI server:
 python -m uvicorn app.main:app --reload
 ```
 
-Backend API:
+Backend API: http://127.0.0.1:8000
 
-http://127.0.0.1:8000
-
-API documentation:
-
-http://127.0.0.1:8000/docs
+API Documentation: http://127.0.0.1:8000/docs
 
 ### 3. Start the Frontend
 
-Open a second terminal:
+Open a second terminal from the project root:
 
 ```bash
 cd frontend
@@ -140,23 +138,21 @@ http://localhost:5173
 
 ### 4. Access the Application
 
-- Open the frontend URL.
-- Register a new account using your own test email and password.
-- Log in using the account you created.
-- Explore the available dashboard and health-tracking features.
-
-**Note:** The frontend and backend must both be running for the application to work correctly.
+1. Open the frontend URL in your browser.
+2. Register a new account using a test email and password.
+3. Log in using the account you created.
+4. Explore the dashboard and available health-tracking features.
 
 ---
 
 ## 🔐 Authentication and Data Privacy
 
 - User authentication is implemented using JWT.
-- Passwords are handled using password hashing.
+- Passwords are protected using password hashing.
 - User data is stored in a local SQLite database.
 - Database files and personal credentials are excluded from this public repository.
 
-Use test information when exploring the application. This project is currently a development prototype and is not intended to replace professional medical advice.
+Use test information when exploring the application. CycleSense is currently a development prototype and is not intended to replace professional medical advice.
 
 ---
 
@@ -187,4 +183,9 @@ B.E. Artificial Intelligence and Machine Learning | 2027
 
 ---
 
-⭐ This project is actively under development. Contributions, suggestions, and feedback are welcome.
+⭐ This project is actively under development. Suggestions and feedback are welcome.
+
+
+**Note:** Both the frontend and backend must be running for the application to work correctly.
+
+*Planned features are not yet implemented and are subject to development and validation.*
